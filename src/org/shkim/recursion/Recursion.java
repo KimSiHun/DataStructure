@@ -32,7 +32,7 @@ public class Recursion
 		}
 	}
 
-	// recursion
+	// recursion fib(45) 5sec
 	public static int recur_fib(int N)
 	{
 		if (N == 0)
@@ -45,7 +45,7 @@ public class Recursion
 		return (recur_fib(N - 1) + recur_fib(N - 2));
 	}
 
-	// iterate
+	// iterate fib(45) 0 sec
 	public static int iter_fib(int N)
 	{
 
@@ -74,8 +74,9 @@ public class Recursion
 		return temp;
 	}
 
-	private static long timeDiffSec(long s, long e)
+	private static long timeDiffSec(long s)
 	{
+		long e = System.currentTimeMillis();
 		return (e - s);
 	}
 
@@ -84,10 +85,8 @@ public class Recursion
 	{
 		long s = System.currentTimeMillis();
 
-		System.out.println(iter_fib(7));
+		System.out.println(iter_fib(45));
 
-		long e = System.currentTimeMillis();
-
-		System.out.println(timeDiffSec(s, e) / 1000 + "sec");
+		System.out.println(timeDiffSec(s) / 1000 + "sec");
 	}
 }
